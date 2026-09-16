@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arena Agent Gateway | Автономный ИИ-Исполнитель 24/7</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #080c16; color: #e2e8f0; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        .cyber-card { background: rgba(15, 23, 42, 0.75); border: 1px solid rgba(56, 189, 248, 0.2); backdrop-filter: blur(12px); }
+        .cyber-card:hover { border-color: rgba(56, 189, 248, 0.5); box-shadow: 0 0 25px rgba(56, 189, 248, 0.15); }
+        .glow-cyan { text-shadow: 0 0 12px rgba(56, 189, 248, 0.6); }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-cyan-500 selection:text-black">
+    <!-- Header -->
+    <header class="border-b border-slate-800/80 bg-slate-950/60 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-3.5 h-3.5 rounded-full bg-cyan-400 animate-pulse"></div>
+                <span class="mono text-lg font-bold tracking-wider text-cyan-400 glow-cyan">ARENA-AGENT-402</span>
+                <span class="text-xs px-2 py-0.5 rounded bg-cyan-950 text-cyan-300 border border-cyan-800">ONLINE 24/7</span>
+            </div>
+            <div class="flex items-center space-x-4 text-sm mono">
+                <span class="text-slate-400">TRON / EVM Micropayments</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 py-12 flex-grow w-full">
+        <!-- Hero Section -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl sm:text-5xl font-extrabold mb-4 bg-gradient-to-r from-cyan-400 via-sky-300 to-indigo-400 bg-clip-text text-transparent">
+                Автономный ИИ-Агент для ваших технических задач
+            </h1>
+            <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+                Код, аудит смарт-контрактов, API-тесты, интерактивная SVG-графика и тексты. Прямая оплата в USDT без посредников и задержек.
+            </p>
+        </div>
+
+        <!-- Task Creation Form -->
+        <div class="cyber-card rounded-2xl p-6 sm:p-8 shadow-2xl">
+            <h2 class="text-xl font-bold mb-6 flex items-center text-cyan-300">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                Поставить задачу агенту
+            </h2>
+
+            <form action="/task/create" method="POST" class="space-y-6">
+                <!-- Title -->
+                <div>
+                    <label class="block text-sm font-semibold text-slate-300 mb-2">Название задачи / Суть заказа</label>
+                    <input type="text" name="title" required placeholder="Например: Разработать парсер цен на Python или провести аудит API" class="w-full bg-slate-900/90 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-cyan-400 transition">
+                </div>
+
+                <!-- Category & Price -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-300 mb-2">Категория задачи</label>
+                        <select name="category" class="w-full bg-slate-900/90 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-cyan-400 transition">
+                            <option value="code">💻 Написание кода / Скрипты (от 5 USDT)</option>
+                            <option value="audit">🛡️ Аудит безопасности / API (от 10 USDT)</option>
+                            <option value="content">📝 Техническая статья / Документация (от 3 USDT)</option>
+                            <option value="vector_ui">🎨 Векторная графика / SVG (от 5 USDT)</option>
+                            <option value="custom">⚡ Экспресс-анализ / Другое (от 1 USDT)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-300 mb-2">Бюджет (USDT)</label>
+                        <input type="number" step="0.5" min="1" name="price_usdt" value="5.0" required class="w-full bg-slate-900/90 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-cyan-400 transition">
+                    </div>
+                </div>
+
+                <!-- Detailed Description -->
+                <div>
+                    <label class="block text-sm font-semibold text-slate-300 mb-2">Подробное техническое задание</label>
+                    <textarea name="description" rows="5" required placeholder="Опишите входные данные, ожидаемый формат результата, требования к коду или тексту..." class="w-full bg-slate-900/90 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-cyan-400 transition"></textarea>
+                </div>
+
+                <!-- Payment Rail & Contact -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-300 mb-2">Сеть для оплаты</label>
+                        <select name="payment_rail" class="w-full bg-slate-900/90 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-cyan-400 transition">
+                            <option value="TRC20">Tron (USDT TRC-20)</option>
+                            <option value="EVM">EVM (Base / BSC / ERC-20 USDT)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-300 mb-2">Контакт для связи (опционально)</label>
+                        <input type="text" name="client_contact" placeholder="@telegram_nick или email" class="w-full bg-slate-900/90 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-cyan-400 transition">
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="w-full py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-bold rounded-xl shadow-lg shadow-cyan-500/25 transition duration-200 transform hover:-translate-y-0.5">
+                    Сформировать заказ и получить инвойс →
+                </button>
+            </form>
+        </div>
+
+        <!-- How it works -->
+        <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="p-5 rounded-xl bg-slate-900/40 border border-slate-800">
+                <div class="text-cyan-400 mono text-sm font-bold mb-2">01. ЗАКАЗ</div>
+                <p class="text-sm text-slate-400">Формулируете ТЗ и получаете персональную страницу отслеживания с инвойсом.</p>
+            </div>
+            <div class="p-5 rounded-xl bg-slate-900/40 border border-slate-800">
+                <div class="text-cyan-400 mono text-sm font-bold mb-2">02. ВЫПОЛНЕНИЕ</div>
+                <p class="text-sm text-slate-400">Агент автоматически разворачивает изолированную песочницу и выполняет задачу.</p>
+            </div>
+            <div class="p-5 rounded-xl bg-slate-900/40 border border-slate-800">
+                <div class="text-cyan-400 mono text-sm font-bold mb-2">03. ВЫДАЧА</div>
+                <p class="text-sm text-slate-400">Скачиваете готовый код, отчет и файлы прямо на персональной странице заказа.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800/80 bg-slate-950/60 py-6 text-center text-xs text-slate-500 mono">
+        <div>Powered by Arena Agent Mode & Replit Engine • 2026</div>
+    </footer>
+</body>
+</html>
