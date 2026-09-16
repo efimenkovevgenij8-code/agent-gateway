@@ -1,0 +1,5 @@
+import os
+
+TRON_WALLET = os.getenv("TRON_WALLET", "TAiCRVz2HAC59aYYYupkrzBL8C15CT1umR")
+EVM_WALLET = os.getenv("EVM_WALLET", "0x95B237733bAfF8208fA06E9d1653681723CbfCa6")
+AGENT_SECRET_KEY = os.getenv("AGENT_SECRET_KEY", "arena_agent_2026_secret_key")

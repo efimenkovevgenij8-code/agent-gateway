@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: arena-agent-gateway
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: TRON_WALLET
+        value: TAiCRVz2HAC59aYYYupkrzBL8C15CT1umR
+      - key: EVM_WALLET
+        value: 0x95B237733bAfF8208fA06E9d1653681723CbfCa6
+      - key: AGENT_SECRET_KEY
+        generateValue: true
